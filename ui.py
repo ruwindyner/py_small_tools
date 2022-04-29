@@ -1,37 +1,37 @@
-from cProfile import label
-from PyQt6.QtWidgets import QApplication,QWidget,QLabel
+import sys
+from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton, QHBoxLayout, QWidget
 
-class Window(QWidget):
-    def __init__(self):
-        super().__init__()
-        self.setWindowTitle('the first app')
-        self.resize(500,500)
-        self.move(200,245)
-        self.setup_ui()
-    def setup_ui(self):
-        label = QLabel(self)
-        label.setText('this is my first app')
-        label.move(200,245)
+class Window(QMainWindow):
+    def __init__(self, parent=None):
+        super(Window, self).__init__(parent)
 
-if __name__ == '__main__':
-    import sys
+        self.setWindowTitle('Main application window')
+        self.resize(500, 400)
+
+        self.status = self.statusBar()
+        self.status.showMessage('This is the status bar and the message only exists 5 seconds')
+
+        self.button = QPushButton('Close the window')
+        self.button.clicked.connect(self.click)
+
+        layout = QHBoxLayout()
+        layout.addWidget(self.button)
+
+        MainFrame = QWidget()
+        MainFrame.setLayout(layout)
+        self.setCentralWidget(MainFrame)
+
+
+    def click(self):
+        sender = self.sender()
+        print(sender.text()+' 按钮被按下')
+        app = QApplication.instance()
+        app.quit()
+
+
+
+if __name__ =='__main__':
     app = QApplication(sys.argv)
     window = Window()
     window.show()
     sys.exit(app.exec())
-
-# import sys
-# from PyQt6.QtWidgets import QApplication,QWidget,QLabel,QMainWindow
-# from pyqt.Ui_firstmainwin import *
-
-
-# class myMainWindow(QMainWindow,Ui_MainWindow):
-#     def __init__(self,parent=None):
-#         super(myMainWindow,self).__init__(parent)
-#         self.setupUi(self)
-
-# if __name__ == '__main__':
-#     app = QApplication(sys.argv)
-#     mywin = myMainWindow()
-#     mywin.show()
-#     sys.exit(app.exec())

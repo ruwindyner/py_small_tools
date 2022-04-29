@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>633</width>
-    <height>335</height>
+    <width>681</width>
+    <height>358</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -45,7 +45,7 @@
     <widget class="QTextEdit" name="textEdit">
      <property name="geometry">
       <rect>
-       <x>11</x>
+       <x>10</x>
        <y>33</y>
        <width>508</width>
        <height>108</height>
@@ -81,11 +81,24 @@
     <widget class="QTextEdit" name="textEdit_2">
      <property name="geometry">
       <rect>
-       <x>11</x>
+       <x>10</x>
        <y>170</y>
        <width>508</width>
        <height>108</height>
       </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_2">
+     <property name="geometry">
+      <rect>
+       <x>520</x>
+       <y>200</y>
+       <width>75</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>close</string>
      </property>
     </widget>
    </widget>
@@ -95,7 +108,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>633</width>
+     <width>681</width>
      <height>22</height>
     </rect>
    </property>
@@ -115,8 +128,24 @@
      <y>146</y>
     </hint>
     <hint type="destinationlabel">
-     <x>772</x>
+     <x>680</x>
      <y>238</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>575</x>
+     <y>245</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>711</x>
+     <y>323</y>
     </hint>
    </hints>
   </connection>

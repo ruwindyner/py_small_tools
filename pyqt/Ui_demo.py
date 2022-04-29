@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(633, 335)
+        MainWindow.resize(681, 358)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.frame = QtWidgets.QFrame(self.centralwidget)
@@ -24,7 +24,7 @@ class Ui_MainWindow(object):
         self.pushButton.setGeometry(QtCore.QRect(520, 33, 75, 108))
         self.pushButton.setObjectName("pushButton")
         self.textEdit = QtWidgets.QTextEdit(self.frame)
-        self.textEdit.setGeometry(QtCore.QRect(11, 33, 508, 108))
+        self.textEdit.setGeometry(QtCore.QRect(10, 33, 508, 108))
         self.textEdit.setObjectName("textEdit")
         self.label = QtWidgets.QLabel(self.frame)
         self.label.setGeometry(QtCore.QRect(11, 148, 48, 16))
@@ -33,11 +33,14 @@ class Ui_MainWindow(object):
         self.label_2.setGeometry(QtCore.QRect(11, 10, 24, 16))
         self.label_2.setObjectName("label_2")
         self.textEdit_2 = QtWidgets.QTextEdit(self.frame)
-        self.textEdit_2.setGeometry(QtCore.QRect(11, 170, 508, 108))
+        self.textEdit_2.setGeometry(QtCore.QRect(10, 170, 508, 108))
         self.textEdit_2.setObjectName("textEdit_2")
+        self.pushButton_2 = QtWidgets.QPushButton(self.frame)
+        self.pushButton_2.setGeometry(QtCore.QRect(520, 200, 75, 24))
+        self.pushButton_2.setObjectName("pushButton_2")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 633, 22))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 681, 22))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -46,6 +49,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         self.pushButton.clicked.connect(MainWindow.generate) # type: ignore
+        self.pushButton_2.clicked.connect(MainWindow.close) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -54,3 +58,4 @@ class Ui_MainWindow(object):
         self.pushButton.setText(_translate("MainWindow", "生成"))
         self.label.setText(_translate("MainWindow", "返回结果"))
         self.label_2.setText(_translate("MainWindow", "输入"))
+        self.pushButton_2.setText(_translate("MainWindow", "close"))
